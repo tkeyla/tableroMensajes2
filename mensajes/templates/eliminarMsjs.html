@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{%block title%}Eliminar mensajes{%endblock%}
+{%block script%}
+    <script lang="JavaScript">
+        document.addEventListener("DOMContentLoaded", function (){
+            document.querySelectorAll('.selectable').forEach(div => {
+                div.addEventListener('click', function() {
+                    if (div.classList.contains('selected')){
+                        div.classList.remove('selected');
+                    } else {
+                        div.classList.add('selected');
+                    }
+                });
+            });
+        });
+    </script>
+{%endblock%}
+{%block header%}Selecciona los mensajes que quieras eliminar&excl;{%endblock%}
+{%block content%}
+    {%include 'listaMensajes.html'%}
+{%endblock%}

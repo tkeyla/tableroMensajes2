@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{%block title%}{%endblock%}</title>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'mensajes/styles.css' %}">
+        {%block script%}{%endblock%}
+    </head>
+    <body>
+        <header>
+            <h1>{%block header%}{%endblock%}</h1>
+            <nav>
+                <ul>
+                    <li><a href="{%url 'home'%}">Principal</a></li>
+                    <li><a href="{%url 'verMsjsRecibidos'%}">Ver recibidos</a></li>
+                    <li><a href="{%url 'verMsjsEnviados'%}">Ver enviados</a></li>
+                    <li><a href="{%url 'eliminarMsjs'%}">Eliminar mensajes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {%block content%}
+            {%endblock%}
+        </main>
+    </body>
+</html>

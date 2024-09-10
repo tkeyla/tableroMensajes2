@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{%block title%}Crear mensaje{%endblock%}
+{%block header%}Crear mensaje{%endblock%}
+{%block content%}
+    <form action="{%url 'crearMensaje'%}" method="POST">
+        {%csrf_token%}
+        {{form.as_div}}
+        <input class="submit" type="submit" value="Enviar">
+    </form>
+{%endblock%} 

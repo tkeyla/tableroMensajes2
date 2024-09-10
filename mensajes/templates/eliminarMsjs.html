@@ -34,8 +34,10 @@
 {%block header%}Selecciona los mensajes que quieras eliminar&excl;{%endblock%}
 {%block content%}
     {%include 'listaMensajes.html'%}
-    <form action="{%url 'eliminarMsjs'%}">
-        <input type="hidden" id="seleccionados" name="mensajes_seleccionados" value="">
-        <input type="submit" value="Eliminar">
-    </form>
+    {%if mensajes%}
+        <form action="{%url 'eliminarMsjs'%}">
+            <input type="hidden" id="seleccionados" name="mensajes_seleccionados" value="">
+            <input class="submit" type="submit" value="Eliminar">
+        </form>
+    {%endif%}
 {%endblock%}

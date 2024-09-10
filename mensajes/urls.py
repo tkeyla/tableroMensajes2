@@ -9,3 +9,4 @@ urlpatterns = [
     path('eliminarmensajes', views.eliminar_mensajes, name='eliminarMsjs'),
     path('crearmensaje', views.crear_mensaje, name='crearMensaje')
 ]
+

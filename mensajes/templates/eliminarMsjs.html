@@ -3,19 +3,39 @@
 {%block script%}
     <script lang="JavaScript">
         document.addEventListener("DOMContentLoaded", function (){
+            idsInput = document.querySelector('#seleccionados');
             document.querySelectorAll('.selectable').forEach(div => {
                 div.addEventListener('click', function() {
                     if (div.classList.contains('selected')){
                         div.classList.remove('selected');
+                        quitarID(div.dataset.id);
                     } else {
                         div.classList.add('selected');
+                        agregarID(div.dataset.id);
                     }
                 });
             });
+
+            function agregarID(id){
+                let IDs = idsInput.value ? idsInput.value.split(',') : [];
+                IDs.push(id);
+                idsInput.value = IDs.join(',');
+            }
+
+            function quitarID(id){
+                let IDs = idsInput.value ? idsInput.value.split(',') : [];
+                IDs= IDs.filter(seleccionado => seleccionado !== id);
+                idsInput.value = IDs.join(',');
+            }
+
         });
     </script>
 {%endblock%}
 {%block header%}Selecciona los mensajes que quieras eliminar&excl;{%endblock%}
 {%block content%}
     {%include 'listaMensajes.html'%}
+    <form action="{%url 'eliminarMsjs'%}">
+        <input type="hidden" id="seleccionados" name="mensajes_seleccionados" value="">
+        <input type="submit" value="Eliminar">
+    </form>
 {%endblock%}

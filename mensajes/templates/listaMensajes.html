@@ -8,7 +8,7 @@
     <body>
         {%if mensajes%}
             {%for mensaje in mensajes%}
-                <div class="selectable">
+                <div class="selectable" data-id="{{mensaje.id}}">
                     <p>{{mensaje.texto}}</p>
                     <span>De: {{mensaje.remitente}} A: {{mensaje.destinatario}} - {{mensaje.fecha_y_hora}}</span>
                 </div>

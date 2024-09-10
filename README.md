@@ -2,7 +2,7 @@ TableroMensajes es un proyecto simple que se desarrolló para practicar el uso d
 
 Instalación:
 1. Clona el repositorio:
-    git clone https://github.com/tkeyla/tableroMensaje2.git
+    git clone https://github.com/tkeyla/tableroMensajes2.git
 2. Navega a la carpeta donde quieras crear el entorno virtual y crealo:
     virtualenv {nombre_del_entorno}
 4. Navega a la carpeta del proyecto y activa el entorno virtual:
